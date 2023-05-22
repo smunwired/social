@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import url
+from users.views import dashboard
 
 urlpatterns = [
     path("", include("dwitter.urls")),
     path("admin/", admin.site.urls),
+    url(r"^", include("users.urls")),
 ]
